@@ -9,19 +9,24 @@
  * @author julio
  */
 public class Algoritmos {
-    int n;
+    // Atributos/propiedades.
+    private int n;
     
+    // Método constructor.
     public Algoritmos(int n) {
         this.n = n;
     }
     
+    // Métodos.
+    
+    // Calcular números primos.
     public int[] calcularNumPrimos(int n) {
         int[] numPrimos = new int[n];
         int cantidad = 0, numero = 1, cantDivisores = 0, indice = 0;
         
         // Algoritmo.
         // La cantidad debe ser igual a n.
-        while(cantidad < 5) {
+        while(cantidad < n) {
             /*
             Estamos calculando la cantidad de divisores
             que tiene la variable numero.
@@ -54,8 +59,32 @@ public class Algoritmos {
         return numPrimos;
     }
     
+    // Calcular serie Fibonacci.
+    public int[] calcularFibonacci(int n) {
+        int[] numFibonacci = new int[n];
+        int num1 = 0, num2 = 1, fibonacci;
+        /*
+        La serie Fibonacci empieza con 0 y 1.
+        entonces declaramos dos variables con 
+        esos valores y los asignamos al arreglo
+        de la sucesión de Fibonacci.
+        */
+        numFibonacci[0] = num1;
+        numFibonacci[1] = num2;
+        
+        // Algoritmo.
+        for(int i=2; i<n; i++) {
+            fibonacci = num1 + num2; // Se calcula número Fibonacci.
+            numFibonacci[i] = fibonacci; // Lo agregamos al arreglo.
+            // Volvemos a inicializar las variables con los nuevos valores.
+            num1 = num2;
+            num2 = fibonacci;
+        }
+        
+        return numFibonacci;
+    }
     
-    
+    // Método para imprimir un arreglo de tipo int.
     public void imprimirArreglo(int[] arreglo) {
         for(int i=0; i<arreglo.length; i++) {
             System.out.print(arreglo[i] + ", ");
