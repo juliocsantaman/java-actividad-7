@@ -11,10 +11,12 @@
 public class Main {
     public static void main(String[] args) {
         
+        // Declaración de variables.
         int n = 20;
         int[] numPrimos;
         int[] numFibonacci;
         
+        // Haciendo dos instancias de la clase Algoritmos.
         Algoritmos obj1 = new Algoritmos(n);
         Algoritmos obj2 = new Algoritmos(n);
         
